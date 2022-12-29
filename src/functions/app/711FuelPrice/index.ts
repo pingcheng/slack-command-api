@@ -15,11 +15,11 @@ router.post("/", async (req, res) =>{
 
     sqs.sendMessage({
         MessageBody: JSON.stringify(message),
-        QueueUrl: process.env.SEVEN_ELEVEN_FUEL_PRICE_QUEUE_URL
+        QueueUrl: process.env.FUEL_PRICE_QUEUE_URL
     }, (err) => {
         if (err) {
             console.log(err);
-            res.send("Failed to enqueue");
+            res.send(`Failed to enqueue, queue url - ${process.env.FUEL_PRICE_QUEUE_URL}`);
         } else {
             res.send("Queued");
         }

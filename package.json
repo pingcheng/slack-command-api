@@ -6,6 +6,7 @@
   "scripts": {
     "start": "sls offline start --reloadHandler",
     "deploy:local": "sls deploy --stage local",
+    "deploy:prod": "sls deploy --stage prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {

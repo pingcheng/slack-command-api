@@ -5,6 +5,7 @@ import app from '@functions/app';
 const serverlessConfiguration: AWS = {
   service: 'slack-command-api',
   frameworkVersion: '3',
+  useDotenv: true,
   plugins: [
     'serverless-esbuild',
     'serverless-offline',
@@ -22,7 +23,18 @@ const serverlessConfiguration: AWS = {
       NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
     },
     stage: 'local',
-    region: 'ap-southeast-2'
+    region: 'ap-southeast-2',
+    iam: {
+      role: {
+        statements: [
+          {
+            "Effect": "Allow",
+            "Action": "sqs:SendMessage",
+            "Resource": "${env:FUEL_PRICE_QUEUE_ARN}"
+          }
+        ]
+      }
+    }
   },
   // import the function via paths
   functions: { app },
