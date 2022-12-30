@@ -12,6 +12,7 @@ export const checkFuelPrice: ShortcutHandler = async (triggerId) => {
     },
     data: {
       trigger_id: triggerId,
+      callback_id: "fuel_price_modal",
       view: {
         title: {
           type: "plain_text",
