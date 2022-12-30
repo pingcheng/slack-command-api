@@ -3,7 +3,7 @@ import axios from "axios";
 import * as process from "process";
 
 export const checkFuelPrice: ShortcutHandler = async (triggerId) => {
-  await axios.request({
+  const response = await axios.request({
     method: "post",
     url: "https://slack.com/api/views.open",
     headers: {
@@ -35,5 +35,11 @@ export const checkFuelPrice: ShortcutHandler = async (triggerId) => {
       },
     },
   });
+
+  if (response.status !== 200) {
+    console.error("Failed to call slack to open a modal", response);
+    throw new Error("Failed to make modal call");
+  }
+
   return;
 };

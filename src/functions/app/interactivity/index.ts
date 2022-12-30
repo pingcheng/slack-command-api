@@ -5,16 +5,19 @@ import * as console from "console";
 export const router: express.Router = express.Router();
 
 router.post("/", async (req, res) => {
-  const payload = JSON.parse(req.body.toString());
+  const body = req.body.toString();
+  console.log("Received interactivity request", body);
+
+  const payload = JSON.parse(body);
 
   if (!payload.type) {
     return res.send(`invalid request type`);
   }
 
   try {
-    await handle(payload.type, req.body.toString());
+    await handle(payload.type, body);
   } catch (error) {
-    console.log("failed to process interactivity request", error, req.body);
+    console.error("failed to process interactivity request", error, body);
     return res.status(500).send(`server error - ${error.message}`);
   }
 
