@@ -20,6 +20,12 @@ jobs:
       - name: Audit packages
         run: npm audit
 
+      - name: Check code lint
+        run: npm run lint:check
+
+      - name: Check code style
+        run: npm run format:check
+
       - name: Deployment
         uses: serverless/github-action@master
         with:
