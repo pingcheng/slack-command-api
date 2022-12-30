@@ -21,7 +21,7 @@ router.post("/", async (req, res) =>{
             console.log(err);
             res.send(`Failed to enqueue, queue url - ${process.env.FUEL_PRICE_QUEUE_URL}, reason - ${err.message}`);
         } else {
-            res.send(`Queued - ${JSON.stringify(message)}`);
+            res.send(`👨‍💻Working on it...`);
         }
     })
 })
