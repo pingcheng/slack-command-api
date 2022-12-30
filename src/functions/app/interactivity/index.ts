@@ -5,7 +5,7 @@ import * as console from "console";
 export const router: express.Router = express.Router();
 
 router.post("/", async (req, res) => {
-  const body = req.body.toString();
+  const body = req.body.payload;
   console.log("Received interactivity request", req);
 
   const payload = JSON.parse(body);
