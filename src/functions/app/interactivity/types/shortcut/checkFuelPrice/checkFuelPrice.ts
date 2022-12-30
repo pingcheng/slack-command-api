@@ -30,6 +30,25 @@ export const checkFuelPrice: ShortcutHandler = async (triggerId) => {
               emoji: true,
             },
           },
+          {
+            type: "actions",
+            elements: [
+              {
+                type: "conversations_select",
+                response_url_enabled: true,
+                default_to_current_conversation: true,
+                placeholder: {
+                  type: "plain_text",
+                  text: "Select private conversation",
+                  emoji: true,
+                },
+                filter: {
+                  include: ["private"],
+                },
+                action_id: "conversations_select_fuel_price_modal",
+              },
+            ],
+          },
         ],
         type: "modal",
       },
