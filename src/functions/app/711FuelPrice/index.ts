@@ -5,7 +5,10 @@ import { enqueue, Queue } from "@libs/queue";
 export const router: express.Router = express.Router();
 router.post("/", async (req, res) => {
   const message = {
-    response_url: req.body.response_url,
+    destination: {
+      url: req.body.response_url,
+      method: "post",
+    },
   };
 
   enqueue(Queue.FUEL_PRICE, JSON.stringify(message))
