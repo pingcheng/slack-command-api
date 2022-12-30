@@ -10,3 +10,7 @@ jspm_packages
 
 # ide
 .idea
+
+# env
+.env.local
+.env.prod
