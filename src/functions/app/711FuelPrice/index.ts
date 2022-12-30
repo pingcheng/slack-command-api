@@ -4,6 +4,7 @@ import { enqueue, Queue } from "@libs/queue";
 // Create an SQS service object
 export const router: express.Router = express.Router();
 router.post("/", async (req, res) => {
+  console.log("Received the 711 fuel price request", req);
   const message = {
     destination: {
       url: req.body.response_url,
