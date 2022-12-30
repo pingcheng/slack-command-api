@@ -6,7 +6,7 @@ export const router: express.Router = express.Router();
 
 router.post("/", async (req, res) => {
   const body = req.body.toString();
-  console.log("Received interactivity request", body);
+  console.log("Received interactivity request", req);
 
   const payload = JSON.parse(body);
 
