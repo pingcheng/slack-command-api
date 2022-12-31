@@ -21,6 +21,7 @@ export const fuelPriceModalHandler: ViewSubmissionHandler = async (payload) => {
     data: {
       fuelType: fuelType,
       publicMessage: true,
+      userId: payload.user.id,
     },
   };
 

@@ -11,5 +11,6 @@ export type FuelPriceMessage = {
   data: {
     fuelType: string;
     publicMessage: boolean;
+    userId?: string;
   };
 };

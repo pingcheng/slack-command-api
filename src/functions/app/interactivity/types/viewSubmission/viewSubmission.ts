@@ -3,6 +3,9 @@ import { fuelPriceModalHandler } from "@functions/app/interactivity/types/viewSu
 import { KeyValueMap } from "../../../../../common/types";
 
 export type ViewSubmissionPayload = {
+  user: {
+    id: string;
+  };
   view: {
     callback_id: string;
     state: {
