@@ -33,6 +33,7 @@ export const checkFuelPrice: ShortcutHandler = async (triggerId) => {
           },
           {
             type: "input",
+            block_id: "block_channel_select",
             element: {
               type: "channels_select",
               placeholder: {
@@ -52,6 +53,7 @@ export const checkFuelPrice: ShortcutHandler = async (triggerId) => {
           },
           {
             type: "input",
+            block_id: "block_fuel_type_select",
             element: {
               type: "static_select",
               action_id: "fuel_type_select_fuel_price",
