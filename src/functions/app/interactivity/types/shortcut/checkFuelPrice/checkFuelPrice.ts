@@ -86,9 +86,9 @@ export const checkFuelPrice: ShortcutHandler = async (triggerId) => {
                 {
                   text: {
                     type: "plain_text",
-                    text: "E98",
+                    text: "U98",
                   },
-                  value: "E98",
+                  value: "U98",
                 },
                 {
                   text: {
