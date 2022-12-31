@@ -42,10 +42,78 @@ export const checkFuelPrice: ShortcutHandler = async (triggerId) => {
               },
               action_id: "channel_select_fuel_price",
               response_url_enabled: true,
+              initial_channel: "C8P5XJ8FL",
             },
             label: {
               type: "plain_text",
-              text: "Channel",
+              text: "Post the result in",
+              emoji: true,
+            },
+          },
+          {
+            type: "input",
+            element: {
+              type: "static_select",
+              action_id: "fuel_type_select_fuel_price",
+              placeholder: {
+                type: "plain_text",
+                text: "Select a fuel type",
+              },
+              options: [
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "E10",
+                  },
+                  value: "E10",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "U91",
+                  },
+                  value: "U91",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "U95",
+                  },
+                  value: "U95",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "E98",
+                  },
+                  value: "E98",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "Diesel",
+                  },
+                  value: "Diesel",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "LPG",
+                  },
+                  value: "LPG",
+                },
+              ],
+              initial_option: {
+                text: {
+                  type: "plain_text",
+                  text: "U91",
+                },
+                value: "U91",
+              },
+            },
+            label: {
+              type: "plain_text",
+              text: "Fuel type",
               emoji: true,
             },
           },
