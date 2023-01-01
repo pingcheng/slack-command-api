@@ -1,6 +1,5 @@
 import express from "express";
 import { handle } from "@functions/app/interactivity/handler";
-import * as console from "console";
 
 export const router: express.Router = express.Router();
 

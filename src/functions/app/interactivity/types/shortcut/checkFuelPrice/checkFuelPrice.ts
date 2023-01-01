@@ -1,6 +1,5 @@
 import { ShortcutHandler } from "@functions/app/interactivity/types/shortcut/shortcut";
 import axios from "axios";
-import * as process from "process";
 
 export const checkFuelPrice: ShortcutHandler = async (triggerId) => {
   const response = await axios.request({
