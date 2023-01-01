@@ -17,12 +17,12 @@ router.post("/", async (req, res) => {
     },
   };
 
-  enqueue(Queue.FUEL_PRICE, JSON.stringify(message))
-    .then(() => {
-      res.send(`:eyes: Looking into prices...`);
-    })
-    .catch((error) => {
-      console.log("Error happened", error);
-      res.send(`:cry: Something went wrong, please try again later`);
-    });
+  try {
+    await enqueue(Queue.FUEL_PRICE, JSON.stringify(message));
+  } catch (error) {
+    console.error("Error happened", error);
+    return res.send(`:cry: Something went wrong, please try again later`);
+  }
+
+  res.send(`:eyes: Looking into prices...`);
 });
