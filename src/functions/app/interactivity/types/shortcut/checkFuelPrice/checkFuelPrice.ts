@@ -118,6 +118,88 @@ export const checkFuelPrice: ShortcutHandler = async (triggerId) => {
               emoji: true,
             },
           },
+          {
+            type: "input",
+            block_id: "block_fuel_state_select",
+            element: {
+              type: "static_select",
+              action_id: "fuel_state_select_fuel_state",
+              placeholder: {
+                type: "plain_text",
+                text: "Select a state",
+              },
+              options: [
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "All",
+                  },
+                  value: "all",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "VIC",
+                  },
+                  value: "vic",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "NSW",
+                  },
+                  value: "nsw",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "SA",
+                  },
+                  value: "sa",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "ACT",
+                  },
+                  value: "act",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "WA",
+                  },
+                  value: "wa",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "NT",
+                  },
+                  value: "nt",
+                },
+                {
+                  text: {
+                    type: "plain_text",
+                    text: "TAS",
+                  },
+                  value: "tas",
+                },
+              ],
+              initial_option: {
+                text: {
+                  type: "plain_text",
+                  text: "All",
+                },
+                value: "all",
+              },
+            },
+            label: {
+              type: "plain_text",
+              text: "State",
+              emoji: true,
+            },
+          },
         ],
         type: "modal",
       },

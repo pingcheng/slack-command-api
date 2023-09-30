@@ -12,6 +12,9 @@ export const fuelPriceModalHandler: ViewSubmissionHandler = async (payload) => {
   const fuelType =
     submittedValues.block_fuel_type_select.fuel_type_select_fuel_price
       .selected_option.value ?? "U91";
+  const state =
+    submittedValues.block_fuel_state_select.fuel_state_select_fuel_state
+      .selected_option.value ?? "all";
 
   const message: FuelPriceMessage = {
     destination: {
@@ -20,6 +23,7 @@ export const fuelPriceModalHandler: ViewSubmissionHandler = async (payload) => {
     },
     data: {
       fuelType: fuelType,
+      state,
       publicMessage: true,
       userId: payload.user.id,
     },
